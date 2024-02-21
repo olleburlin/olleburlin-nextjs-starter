@@ -65,7 +65,7 @@ function MobileMenu({ isExpanded, toggleExpansion }) {
       variants={background}
       initial="hidden"
       animate={isExpanded ? "show" : "hidden"}
-      className=" backdrop-blur-xl bg-red-950/80 fixed top-0 left-0  z-10   inset-0 h-screen p-4"
+      className=" backdrop-blur-xl bg-black fixed top-0 left-0  z-10  inset-0 h-screen p-4"
     >
       <div className="relative h-full ">
         <div className="pt-8 pb-4 text-3xl  font-bold h-full">
@@ -82,7 +82,7 @@ function MobileMenu({ isExpanded, toggleExpansion }) {
                     <motion.div
                       variants={itemA}
                       className=" relative"
-                      key={menuItem.title}
+                      key={menuItem.name}
                     >
                       <Link
                         href={menuItem.path}
@@ -90,12 +90,12 @@ function MobileMenu({ isExpanded, toggleExpansion }) {
                         onClick={() => toggleExpansion(!isExpanded)}
                         scroll={false}
                       >
-                        {menuItem.title}
+                        {menuItem.name}
                       </Link>
                     </motion.div>
                   </div>
                 );
-              })}{" "}
+              })}
             </motion.div>
           </div>
         </div>
