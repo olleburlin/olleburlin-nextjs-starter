@@ -4,11 +4,11 @@ import { ExpandContext } from "@/context/ExpandContext";
 import Navigation from "./Navigation";
 import Link from "next/link";
 import { motion } from "framer-motion";
-
+import { menuItems } from "@/data/menuItems";
 export default function Header() {
   const { isExpanded, toggleExpansion } = React.useContext(ExpandContext);
   return (
-    <header className="flex items-center justify-between  p-4 bg-black text-gold uppercase tracking-wider text-lg">
+    <header className="flex items-center justify-between  p-4 bg-slate-200 text-stone-800 text-gold uppercase tracking-wider text-lg">
       <div>
         <Link href="/">Site Name</Link>
       </div>
@@ -85,7 +85,7 @@ function MobileMenu({ isExpanded, toggleExpansion }) {
                       key={menuItem.title}
                     >
                       <Link
-                        href={menuItem.href}
+                        href={menuItem.path}
                         className="block"
                         onClick={() => toggleExpansion(!isExpanded)}
                         scroll={false}

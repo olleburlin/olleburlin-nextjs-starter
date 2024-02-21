@@ -18,12 +18,12 @@ export default function Navigation({ isExpanded, toggleExpansion, menuItems }) {
           {!isExpanded && (
             <ul className="flex flex-row gap-8  navigation">
               {menuItems.map((item) => (
-                <li key={item.title}>
-                  <Link href={item.href} scroll={false}>
+                <li key={item.name}>
+                  <Link href={item.path} scroll={false}>
                     <span
-                      className={isCurrentPage(item.href) ? "opacity-50" : null}
+                      className={isCurrentPage(item.path) ? "opacity-50" : null}
                     >
-                      {item.title}
+                      {item.name}
                     </span>
                   </Link>
                 </li>
